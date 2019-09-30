@@ -416,8 +416,8 @@ xui.Class('App', 'xui.Module',{
                 .setHost(host,"xui_ui_link2")
                 .setLeft("5.833333333333333em")
                 .setTop("35.833333333333336em")
-                .setCaption("[ Click here to download the source code ]")
-                .setHref("http://www.crossui.com/Download/demo.CRUD.zip")
+                .setCaption("[ Click here to get the source code ]")
+                .setHref("https://github.com/linb/Serverless-Firestore-CRUD")
                 .setTarget("_blank")
             );
             
