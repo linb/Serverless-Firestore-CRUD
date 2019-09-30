@@ -451,6 +451,21 @@ xui.Class('App', 'xui.Module',{
                             "method":"$Functions.listDocs",
                             "redirection":"other:callback:call"
                         }
+                    ],
+                    "onDocsList":[
+                        {
+                            "desc":"refresh grid",
+                            "type":"page",
+                            "target":"App",
+                            "args":[
+                                "{page.functions.refreshGrid}",
+                                undefined,
+                                undefined,
+                                "{args[2]}"
+                            ],
+                            "method":"functions.refreshGrid",
+                            "redirection":"other:callback:call"
+                        }
                     ]
                 })
             );
@@ -458,7 +473,40 @@ xui.Class('App', 'xui.Module',{
             return children;
             // ]]Code created by CrossUI RAD Studio
         }, 
-        functions:{ },
+        functions:{
+            "refreshGrid":{
+                "desc":"",
+                "params":[
+                    {
+                        "id":"list",
+                        "type":"Array",
+                        "desc":""
+                    }
+                ],
+                "actions":[
+                    {
+                        "desc":"Clear all rows",
+                        "type":"control",
+                        "target":"treegrid",
+                        "args":[ ],
+                        "method":"removeAllRows"
+                    },
+                    {
+                        "desc":"Add rows",
+                        "type":"control",
+                        "target":"treegrid",
+                        "args":[
+                            "{page.treegrid.setRawData()}",
+                            undefined,
+                            undefined,
+                            "{args[0]}"
+                        ],
+                        "method":"setRawData",
+                        "redirection":"other:callback:call"
+                    }
+                ]
+            }
+        },
         events:{
             "onReady":[
                 {
