@@ -454,7 +454,7 @@ xui.Class('App', 'xui.Module',{
                                 "{args[2]}",
                                 null,
                                 null,
-                                false
+                                true
                             ],
                             "method":"insertMapRows"
                         },
