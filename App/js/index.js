@@ -430,6 +430,11 @@ xui.Class('App', 'xui.Module',{
                 .setTarget("_blank")
             );
             
+            append(
+                xui.create("Module.FirestoreService", "xui.Module")
+                .setHost(host,"module_firestoreservice1")
+            );
+            
             return children;
             // ]]Code created by CrossUI RAD Studio
         }, 
@@ -485,6 +490,26 @@ xui.Class('App', 'xui.Module',{
                     }
                 ]
             }
+        },
+        events:{
+            "onReady":[
+                {
+                    "desc":"Action 1",
+                    "type":"module",
+                    "target":"module_firestoreservice1",
+                    "args":[
+                        "{page.module_firestoreservice1.listDocs}",
+                        undefined,
+                        undefined,
+                        "listDocs",
+                        "demoCollections",
+                        undefined,
+                        "100"
+                    ],
+                    "method":"$Functions.listDocs",
+                    "redirection":"other:callback:call"
+                }
+            ]
         }
     }
 });
