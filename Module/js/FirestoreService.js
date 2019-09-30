@@ -225,6 +225,9 @@ xui.Class('Module.FirestoreService', 'xui.Module',{
                 return;
             }
           
+            if(!xui.isNumb(page_size))
+                page_size = parseInt(page_size, 10) || 20;
+            
             var datas=[], schema={}, pageLocation;
             var ref = api.db.collection(collectionName);
             var whereOrders = [];
