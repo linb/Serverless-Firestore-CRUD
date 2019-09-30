@@ -3,7 +3,7 @@ xui.Class('App', 'xui.Module',{
         iniComponents:function(){
             // [[Code created by CrossUI RAD Studio
             var host=this, children=[], append=function(child){children.push(child.get(0));};
-             
+            
             append(
                 xui.create("xui.UI.Group")
                 .setHost(host,"con_update")
@@ -23,7 +23,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("5.833333333333333em")
                 .setTop("0.5em")
                 .setWidth("15em")
-                );
+            );
             
             host.con_update.append(
                 xui.create("xui.UI.Input")
@@ -33,7 +33,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("5.833333333333333em")
                 .setTop("3em")
                 .setWidth("15em")
-                );
+            );
             
             host.con_update.append(
                 xui.create("xui.UI.HTMLButton")
@@ -44,14 +44,13 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("5.833333333333333em")
                 .setTop("5.833333333333333em")
                 .setWidth("15em")
-                .setHtml("Update")
+                .setCaption("Update")
                 .onClick([
                     {
                         "desc":"call update API",
                         "type":"control",
                         "target":"api_update",
-                        "args":[
-                        ],
+                        "args":[ ],
                         "method":"invoke",
                         "event":1,
                         "onOK":0,
@@ -62,7 +61,8 @@ xui.Class('App', 'xui.Module',{
                         "type":"control",
                         "target":"treegrid",
                         "args":[
-                            "","{page.con_update.getFormValues()}"
+                            "",
+                            "{page.con_update.getFormValues()}"
                         ],
                         "method":"setRowMap",
                         "conditions":[
@@ -74,7 +74,7 @@ xui.Class('App', 'xui.Module',{
                         ]
                     }
                 ])
-                );
+            );
             
             host.con_update.append(
                 xui.create("xui.UI.Label")
@@ -83,7 +83,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.8333333333333334em")
                 .setWidth("4.166666666666667em")
                 .setCaption("key")
-                );
+            );
             
             host.con_update.append(
                 xui.create("xui.UI.Label")
@@ -92,7 +92,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("3.3333333333333335em")
                 .setWidth("4.166666666666667em")
                 .setCaption("value")
-                );
+            );
             
             append(
                 xui.create("xui.UI.Group")
@@ -113,7 +113,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("5.833333333333333em")
                 .setTop("0.5em")
                 .setWidth("15em")
-                );
+            );
             
             host.con_create.append(
                 xui.create("xui.UI.Input")
@@ -124,7 +124,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("5.833333333333333em")
                 .setTop("3em")
                 .setWidth("15em")
-                );
+            );
             
             host.con_create.append(
                 xui.create("xui.UI.HTMLButton")
@@ -134,14 +134,13 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("5.833333333333333em")
                 .setTop("5.833333333333333em")
                 .setWidth("15em")
-                .setHtml("Add a new row")
+                .setCaption("Add a new row")
                 .onClick([
                     {
                         "desc":"check form first",
                         "type":"control",
                         "target":"con_create",
-                        "args":[
-                        ],
+                        "args":[ ],
                         "method":"checkValid",
                         "event":1
                     },
@@ -149,8 +148,7 @@ xui.Class('App', 'xui.Module',{
                         "desc":"call create API",
                         "type":"control",
                         "target":"api_create",
-                        "args":[
-                        ],
+                        "args":[ ],
                         "method":"invoke",
                         "onOK":0,
                         "onKO":1
@@ -160,7 +158,10 @@ xui.Class('App', 'xui.Module',{
                         "type":"control",
                         "target":"treegrid",
                         "args":[
-                            "{page.con_create.getFormValues()}","","",false
+                            "{page.con_create.getFormValues()}",
+                            "",
+                            "",
+                            false
                         ],
                         "method":"insertRows",
                         "conditions":[
@@ -175,8 +176,7 @@ xui.Class('App', 'xui.Module',{
                         "desc":"clear form",
                         "type":"control",
                         "target":"con_create",
-                        "args":[
-                        ],
+                        "args":[ ],
                         "method":"formClear",
                         "conditions":[
                             {
@@ -204,7 +204,7 @@ xui.Class('App', 'xui.Module',{
                         ]
                     }
                 ])
-                );
+            );
             
             host.con_create.append(
                 xui.create("xui.UI.Label")
@@ -213,7 +213,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("0.8333333333333334em")
                 .setWidth("4.166666666666667em")
                 .setCaption("key")
-                );
+            );
             
             host.con_create.append(
                 xui.create("xui.UI.Label")
@@ -222,7 +222,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("3.3333333333333335em")
                 .setWidth("4.166666666666667em")
                 .setCaption("value")
-                );
+            );
             
             append(
                 xui.create("xui.UI.Element")
@@ -232,7 +232,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("10px")
                 .setWidth("326px")
                 .setHeight("80px")
-                .setHtml("<div style=\"text-align: center;\"><font size=\"3\">A CRUD app with CrossUI No-Code App Builder&nbsp;</font></div><div style=\"text-align: center;\"><font size=\"3\"><br></font></div><div style=\"text-align: center;\"><font size=\"3\">&nbsp;No Coding Required</font></div>")
+                .setHtml("<div style=\"text-align: center;\">\n    <font size=\"3\">\n        CrossUI Firestore CRUD\n    </font>\n</div>\n<div style=\"text-align: center;\">\n    <font size=\"3\">\n        <br>\n    </font>\n</div>\n<div style=\"text-align: center;\">\n    <font size=\"3\">\n        Codeless &amp; Serverless</font></div>\n")
             );
             
             append(
@@ -256,14 +256,26 @@ xui.Class('App', 'xui.Module',{
                         "caption":"Key",
                         "flexSize":true,
                         "width":"6.666666666666667em",
-                        "type":"label"
+                        "type":"label",
+                        "_cells":{ },
+                        "_serialId":"-h_a",
+                        "_colWidth":"7.083333333333333em",
+                        "_cellWidth":"6.666666666666667em",
+                        "_hcellheight":"2em",
+                        "_region":2
                     },
                     {
                         "id":"value",
                         "caption":"Value",
                         "flexSize":true,
                         "width":"13.333333333333334em",
-                        "type":"label"
+                        "type":"label",
+                        "_cells":{ },
+                        "_serialId":"-h_b",
+                        "_colWidth":"14.083333333333334em",
+                        "_cellWidth":"13.333333333333334em",
+                        "_hcellheight":"2em",
+                        "_region":2
                     }
                 ])
                 .afterRowActive([
@@ -271,16 +283,14 @@ xui.Class('App', 'xui.Module',{
                         "desc":"enable update button",
                         "type":"control",
                         "target":"btnD",
-                        "args":[
-                        ],
+                        "args":[ ],
                         "method":"enable"
                     },
                     {
                         "desc":"enable delete button",
                         "type":"control",
                         "target":"btnU",
-                        "args":[
-                        ],
+                        "args":[ ],
                         "method":"enable"
                     },
                     {
@@ -293,7 +303,7 @@ xui.Class('App', 'xui.Module',{
                         "method":"setFormValues"
                     }
                 ])
-                );
+            );
             
             host.block3.append(
                 xui.create("xui.UI.Block")
@@ -303,7 +313,7 @@ xui.Class('App', 'xui.Module',{
                 .setTop("1.6666666666666667em")
                 .setHeight("2.5em")
                 .setBorderType("none")
-                );
+            );
             
             host.xui_ui_block23.append(
                 xui.create("xui.UI.Span")
@@ -313,7 +323,7 @@ xui.Class('App', 'xui.Module',{
                 .setWidth("8.333333333333334em")
                 .setHeight("1.4166666666666667em")
                 .setHtml("Key/Value Pairs")
-                );
+            );
             
             append(
                 xui.create("xui.UI.Button")
@@ -332,7 +342,8 @@ xui.Class('App', 'xui.Module',{
                         "type":"other",
                         "target":"var",
                         "args":[
-                            "key","{page.iKey.getValue()}"
+                            "key",
+                            "{page.iKey.getValue()}"
                         ],
                         "method":"temp",
                         "event":1
@@ -351,7 +362,7 @@ xui.Class('App', 'xui.Module',{
                                     }
                                 }
                             },
-                            {}
+                            { }
                         ],
                         "method":"setProperties"
                     },
@@ -359,8 +370,7 @@ xui.Class('App', 'xui.Module',{
                         "desc":"call delete API",
                         "type":"control",
                         "target":"api_delete",
-                        "args":[
-                        ],
+                        "args":[ ],
                         "method":"invoke",
                         "onOK":0,
                         "onKO":1
@@ -369,8 +379,7 @@ xui.Class('App', 'xui.Module',{
                         "desc":"remove row from grid",
                         "type":"control",
                         "target":"treegrid",
-                        "args":[
-                        ],
+                        "args":[ ],
                         "method":"removeRows",
                         "event":1,
                         "conditions":[
