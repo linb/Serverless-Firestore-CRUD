@@ -140,68 +140,39 @@ xui.Class('App', 'xui.Module',{
                         "desc":"check form first",
                         "type":"control",
                         "target":"con_create",
-                        "args":[ ],
+                        "args":[
+                            "{page.con_create.checkValid()}"
+                        ],
                         "method":"checkValid",
-                        "event":1
+                        "event":1,
+                        "redirection":"other:callback:call"
+                    },
+                    {
+                        "desc":"get data from form",
+                        "type":"control",
+                        "target":"con_create",
+                        "args":[
+                            "{page.con_create.getFormValues()}",
+                            "temp",
+                            "data"
+                        ],
+                        "method":"getFormValues",
+                        "redirection":"other:callback:call"
                     },
                     {
                         "desc":"call create API",
-                        "type":"control",
-                        "target":"api_create",
-                        "args":[ ],
-                        "method":"invoke",
-                        "onOK":0,
-                        "onKO":1
-                    },
-                    {
-                        "desc":"add a new row",
-                        "type":"control",
-                        "target":"treegrid",
+                        "type":"module",
+                        "target":"module_firestoreservice1",
                         "args":[
-                            "{page.con_create.getFormValues()}",
+                            "{page.module_firestoreservice1.createDoc}",
+                            "none",
                             "",
-                            "",
-                            false
+                            "createDoc",
+                            "tableDemo",
+                            "{temp.data}"
                         ],
-                        "method":"insertRows",
-                        "conditions":[
-                            {
-                                "left":"{temp.okData}",
-                                "symbol":"non-empty",
-                                "right":""
-                            }
-                        ]
-                    },
-                    {
-                        "desc":"clear form",
-                        "type":"control",
-                        "target":"con_create",
-                        "args":[ ],
-                        "method":"formClear",
-                        "conditions":[
-                            {
-                                "left":"{temp.okData}",
-                                "symbol":"non-empty",
-                                "right":""
-                            }
-                        ]
-                    },
-                    {
-                        "desc":"active the last row",
-                        "type":"control",
-                        "target":"treegrid",
-                        "args":[
-                            "{-1}"
-                        ],
-                        "method":"setActiveRow",
-                        "timeout":200,
-                        "conditions":[
-                            {
-                                "left":"{temp.okData}",
-                                "symbol":"non-empty",
-                                "right":""
-                            }
-                        ]
+                        "method":"$Functions.createDoc",
+                        "redirection":"other:callback:call"
                     }
                 ])
             );
