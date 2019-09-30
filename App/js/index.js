@@ -433,6 +433,26 @@ xui.Class('App', 'xui.Module',{
             append(
                 xui.create("Module.FirestoreService", "xui.Module")
                 .setHost(host,"module_firestoreservice1")
+                .setEvents({
+                    "onFirebaseLogin":[
+                        {
+                            "desc":"Action 1",
+                            "type":"module",
+                            "target":"module_firestoreservice1",
+                            "args":[
+                                "{page.module_firestoreservice1.listDocs}",
+                                undefined,
+                                undefined,
+                                "listDocs",
+                                "tableDemo",
+                                undefined,
+                                "100"
+                            ],
+                            "method":"$Functions.listDocs",
+                            "redirection":"other:callback:call"
+                        }
+                    ]
+                })
             );
             
             return children;
@@ -498,15 +518,9 @@ xui.Class('App', 'xui.Module',{
                     "type":"module",
                     "target":"module_firestoreservice1",
                     "args":[
-                        "{page.module_firestoreservice1.listDocs}",
-                        undefined,
-                        undefined,
-                        "listDocs",
-                        "demoCollections",
-                        undefined,
-                        "100"
+                        "{page.module_firestoreservice1.ensureFirebaseAuth}"
                     ],
-                    "method":"$Functions.listDocs",
+                    "method":"$Functions.ensureFirebaseAuth",
                     "redirection":"other:callback:call"
                 }
             ]
