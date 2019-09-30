@@ -466,7 +466,9 @@ xui.Class('App', 'xui.Module',{
                                 "",
                                 "{args[3]}"
                             ],
-                            "method":"setActiveRow"
+                            "method":"setActiveRow",
+                            "timeout":0,
+                            "resetid":""
                         }
                     ]
                 })
