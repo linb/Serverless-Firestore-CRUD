@@ -33,7 +33,19 @@ xui.Class('Module.FirestoreService', 'xui.Module',{
                   GOOGLE_OAUTH_CLIENT_ID : null
             };
             */
-            return {"GOOGLE_OAUTH_CLIENT_ID":"","signInMethods":"EmailPassword;Google","config":{"apiKey":"AIzaSyDpGgxoQQS22UhjQN3WAuZzuQT","authDomain":"crud-c1f66.firebaseapp.com","databaseURL":"https://crud-c1f66.firebaseio.com","projectId":"crud-c1f66","storageBucket":"crud-c1f66.appspot.com","messagingSenderId":"150912604522","appId":"1:150912604522:web:7cd1cba3359a78af4cad13"}};
+            return {
+                "GOOGLE_OAUTH_CLIENT_ID":"",
+                "signInMethods":"EmailPassword;Google",
+                "config":{
+                    "apiKey":"AIzaSyDpGgxoQQS22UhjQN3WAuZzuQT-iBfsVV4",
+                    "authDomain":"crud-c1f66.firebaseapp.com",
+                    "databaseURL":"https://crud-c1f66.firebaseio.com",
+                    "projectId":"crud-c1f66",
+                    "storageBucket":"crud-c1f66.appspot.com",
+                    "messagingSenderId":"150912604522",
+                    "appId":"1:150912604522:web:7cd1cba3359a78af4cad13"
+                }
+            };
         },
         ensureFirebaseAuth:function(){
             var api = this;
