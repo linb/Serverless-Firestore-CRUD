@@ -437,6 +437,37 @@ xui.Class('App', 'xui.Module',{
                             "method":"functions.refreshGrid",
                             "redirection":"other:callback:call"
                         }
+                    ],
+                    "onDocCreate":[
+                        {
+                            "desc":"clear form",
+                            "type":"control",
+                            "target":"con_create",
+                            "args":[ ],
+                            "method":"formClear"
+                        },
+                        {
+                            "desc":"add row",
+                            "type":"control",
+                            "target":"treegrid",
+                            "args":[
+                                "{args[2]}",
+                                null,
+                                null,
+                                false
+                            ],
+                            "method":"insertMapRows"
+                        },
+                        {
+                            "desc":"active row",
+                            "type":"control",
+                            "target":"treegrid",
+                            "args":[
+                                "",
+                                "{args[3]}"
+                            ],
+                            "method":"setActiveRow"
+                        }
                     ]
                 })
             );
