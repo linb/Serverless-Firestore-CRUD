@@ -458,59 +458,7 @@ xui.Class('App', 'xui.Module',{
             return children;
             // ]]Code created by CrossUI RAD Studio
         }, 
-        functions:{
-            "refreshGrid":{
-                "desc":"",
-                "params":[
-                    {
-                        "id":"response",
-                        "type":"Hash",
-                        "desc":""
-                    }
-                ],
-                "actions":[
-                    {
-                        "desc":"clear all rows",
-                        "type":"control",
-                        "target":"treegrid",
-                        "args":[
-                        ],
-                        "method":"removeAllRows"
-                    },
-                    {
-                        "desc":"add rows",
-                        "type":"control",
-                        "target":"treegrid",
-                        "args":[
-                            "{args[0].data}","","",false
-                        ],
-                        "method":"insertRows"
-                    }
-                ]
-            },
-            "onerror":{
-                "desc":"",
-                "params":[
-                    {
-                        "id":"message",
-                        "type":"String",
-                        "desc":""
-                    }
-                ],
-                "actions":[
-                    {
-                        "desc":"alert",
-                        "type":"other",
-                        "target":"msg",
-                        "args":[
-                            "{args[0]}",""
-                        ],
-                        "method":"alert",
-                        "onOK":2
-                    }
-                ]
-            }
-        },
+        functions:{ },
         events:{
             "onReady":[
                 {
