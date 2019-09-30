@@ -16,23 +16,6 @@ xui.Class('Module.FirestoreService', 'xui.Module',{
             window.xui_FirebaseHandler = this;
         },     
         getFirebaseConfig:function(){
-            /*
-            return {
-                config : {
-                  apiKey: "AIzaSyC2Bqk0ddNtUa4UOhgJS9fpUq_3bRG1rck",
-                  authDomain: "crossui.firebaseapp.com",
-                  databaseURL: "https://crossui.firebaseio.com",
-                  projectId: "crossui",
-                  storageBucket: "crossui.appspot.com",
-                  messagingSenderId: "20598955141",
-                  appId: "1:20598955141:web:f86e98e32c1ffcdaf61dec"
-                },
-                signInMethods : "Google;Github;EmailPassword",
-                // Google OAuth Client ID, needed to support One-tap sign-up.
-                // Set to null if One-tap sign-up is not supported.
-                  GOOGLE_OAUTH_CLIENT_ID : null
-            };
-            */
             return {
                 "GOOGLE_OAUTH_CLIENT_ID":"",
                 "signInMethods":"EmailPassword;Google",
