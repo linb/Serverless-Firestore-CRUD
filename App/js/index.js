@@ -436,7 +436,7 @@ xui.Class('App', 'xui.Module',{
                 .setEvents({
                     "onFirebaseLogin":[
                         {
-                            "desc":"Action 1",
+                            "desc":"Call listDocs API",
                             "type":"module",
                             "target":"module_firestoreservice1",
                             "args":[
