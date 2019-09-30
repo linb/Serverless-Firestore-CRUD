@@ -1,5 +1,5 @@
 // It's a module witohout UI elements
-xui.Class('Module.FirebaseService', 'xui.Module',{
+xui.Class('Module.FirestoreService', 'xui.Module',{
     Instance:{
         SCHEMAS_COLLECTION:"__xui_db_schemas",
  
