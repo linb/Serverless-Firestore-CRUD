@@ -451,10 +451,14 @@ xui.Class('App', 'xui.Module',{
                             "type":"control",
                             "target":"treegrid",
                             "args":[
-                                "",
+                                "{page.treegrid.setRowMap()}",
+                                undefined,
+                                undefined,
+                                undefined,
                                 "{args[2]}"
                             ],
-                            "method":"updateRow"
+                            "method":"setRowMap",
+                            "redirection":"other:callback:call"
                         }
                     ],
                     "onDocDelete":[
