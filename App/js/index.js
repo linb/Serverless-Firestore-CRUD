@@ -470,7 +470,6 @@ xui.Class('App', 'xui.Module',{
                             "type":"control",
                             "target":"treegrid",
                             "args":[
-                                "",
                                 "{0}"
                             ],
                             "method":"setActiveRow",
