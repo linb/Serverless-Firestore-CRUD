@@ -463,8 +463,8 @@ xui.Class('App', 'xui.Module',{
                             "type":"control",
                             "target":"treegrid",
                             "args":[
-                                "",
-                                "{args[3]}"
+                                "{args[3]}",
+                                ""
                             ],
                             "method":"setActiveRow",
                             "timeout":300,
