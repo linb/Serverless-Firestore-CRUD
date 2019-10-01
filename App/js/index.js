@@ -47,31 +47,56 @@ xui.Class('App', 'xui.Module',{
                 .setCaption("Update")
                 .onClick([
                     {
-                        "desc":"call update API",
-                        "type":"control",
-                        "target":"api_update",
-                        "args":[ ],
-                        "method":"invoke",
-                        "event":1,
-                        "onOK":0,
-                        "onKO":1
-                    },
-                    {
-                        "desc":"update grid",
+                        "desc":"get Id",
                         "type":"control",
                         "target":"treegrid",
                         "args":[
-                            "",
-                            "{page.con_update.getFormValues()}"
+                            "{page.treegrid.getActiveRow()}",
+                            "temp",
+                            "row",
+                            ""
                         ],
-                        "method":"setRowMap",
+                        "method":"getActiveRow",
                         "conditions":[
                             {
                                 "left":"{temp.okData}",
                                 "symbol":"non-empty",
                                 "right":""
                             }
-                        ]
+                        ],
+                        "redirection":"other:callback:call",
+                        "return":false,
+                        "event":1
+                    },
+                    {
+                        "desc":"get data",
+                        "type":"control",
+                        "target":"con_update",
+                        "args":[
+                            "{page.con_update.getFormValues()}",
+                            "temp",
+                            "data"
+                        ],
+                        "method":"getFormValues",
+                        "redirection":"other:callback:call"
+                    },
+                    {
+                        "desc":"call update API",
+                        "type":"module",
+                        "target":"module_firestoreservice1",
+                        "args":[
+                            "{page.module_firestoreservice1.updateDoc}",
+                            "none",
+                            "",
+                            "",
+                            "tableDemo",
+                            "{temp.data}",
+                            "{temp.row.id}"
+                        ],
+                        "method":"$Functions.updateDoc",
+                        "event":1,
+                        "redirection":"other:callback:call",
+                        "return":false
                     }
                 ])
             );
