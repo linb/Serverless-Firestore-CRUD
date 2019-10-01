@@ -456,6 +456,25 @@ xui.Class('App', 'xui.Module',{
                             ],
                             "method":"updateRow"
                         }
+                    ],
+                    "onDocDelete":[
+                        {
+                            "desc":"remove row",
+                            "type":"control",
+                            "target":"treegrid",
+                            "args":[ ],
+                            "method":"removeRows"
+                        },
+                        {
+                            "desc":"try to active first row",
+                            "type":"control",
+                            "target":"treegrid",
+                            "args":[
+                                "",
+                                "{0}"
+                            ],
+                            "method":"setActiveRow"
+                        }
                     ]
                 })
             );
