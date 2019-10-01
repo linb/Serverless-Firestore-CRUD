@@ -325,74 +325,32 @@ xui.Class('App', 'xui.Module',{
                 .setCaption("Delete the active row")
                 .onClick([
                     {
-                        "desc":"get the key",
-                        "type":"other",
-                        "target":"var",
+                        "desc":"get active row",
+                        "type":"control",
+                        "target":"treegrid",
                         "args":[
-                            "key",
-                            "{page.iKey.getValue()}"
+                            "{page.treegrid.getActiveRow()}",
+                            "temp",
+                            "row"
                         ],
-                        "method":"temp",
+                        "method":"getActiveRow",
+                        "redirection":"other:callback:call",
                         "event":1
                     },
                     {
-                        "desc":"set api args",
-                        "type":"control",
-                        "target":"api_delete",
-                        "args":[
-                            {
-                                "queryArgs":{
-                                    "key":"DBProcess",
-                                    "paras":{
-                                        "action":"delete",
-                                        "key":"{temp.key}"
-                                    }
-                                }
-                            },
-                            { }
-                        ],
-                        "method":"setProperties"
-                    },
-                    {
                         "desc":"call delete API",
-                        "type":"control",
-                        "target":"api_delete",
-                        "args":[ ],
-                        "method":"invoke",
-                        "onOK":0,
-                        "onKO":1
-                    },
-                    {
-                        "desc":"remove row from grid",
-                        "type":"control",
-                        "target":"treegrid",
-                        "args":[ ],
-                        "method":"removeRows",
-                        "event":1,
-                        "conditions":[
-                            {
-                                "left":"{temp.okData}",
-                                "symbol":"non-empty",
-                                "right":""
-                            }
-                        ]
-                    },
-                    {
-                        "desc":"active the last row",
-                        "type":"control",
-                        "target":"treegrid",
+                        "type":"module",
+                        "target":"module_firestoreservice1",
                         "args":[
-                            "{-1}"
+                            "{page.module_firestoreservice1.deleteDoc}",
+                            "none",
+                            "",
+                            undefined,
+                            "tableDemo",
+                            "{temp.row.id}"
                         ],
-                        "method":"setActiveRow",
-                        "timeout":200,
-                        "conditions":[
-                            {
-                                "left":"{temp.okData}",
-                                "symbol":"non-empty",
-                                "right":""
-                            }
-                        ]
+                        "method":"$Functions.deleteDoc",
+                        "redirection":"other:callback:call"
                     }
                 ])
             );
