@@ -486,6 +486,18 @@ xui.Class('App', 'xui.Module',{
                             "timeout":300,
                             "resetid":""
                         }
+                    ],
+                    "onDocUpdate":[
+                        {
+                            "desc":"update row",
+                            "type":"control",
+                            "target":"treegrid",
+                            "args":[
+                                "",
+                                "{args[2]}"
+                            ],
+                            "method":"updateRow"
+                        }
                     ]
                 })
             );
