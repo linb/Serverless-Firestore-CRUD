@@ -361,7 +361,7 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("8.583333333333334em")
                 .setTop("38.583333333333336em")
                 .setCaption("[ Click here to see the tutorial ]")
-                .setHref("https://www.slideshare.net/secret/gFrimzv7TYDDeC")
+                .setHref("https://www.slideshare.net/secret/1CHKWiJxZyz2g7")
                 .setTarget("_blank")
             );
             
