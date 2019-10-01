@@ -57,13 +57,6 @@ xui.Class('App', 'xui.Module',{
                             ""
                         ],
                         "method":"getActiveRow",
-                        "conditions":[
-                            {
-                                "left":"{temp.okData}",
-                                "symbol":"non-empty",
-                                "right":""
-                            }
-                        ],
                         "redirection":"other:callback:call",
                         "event":1
                     },
