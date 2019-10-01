@@ -65,7 +65,6 @@ xui.Class('App', 'xui.Module',{
                             }
                         ],
                         "redirection":"other:callback:call",
-                        "return":false,
                         "event":1
                     },
                     {
