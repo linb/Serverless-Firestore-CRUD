@@ -95,8 +95,7 @@ xui.Class('App', 'xui.Module',{
                         ],
                         "method":"$Functions.updateDoc",
                         "event":1,
-                        "redirection":"other:callback:call",
-                        "return":false
+                        "redirection":"other:callback:call"
                     }
                 ])
             );
