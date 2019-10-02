@@ -3,7 +3,9 @@
 
 [CrossUI CRUD (create, read, update, delete) interactions with Google Firestore](https://linb.github.io/Serverless-Firestore-CRUD)
 
-This is a demo to show how the CrossUI to handle CRUD (create, read, update, delete) interactions with Google Firestore. Codeless and Serverless.
+This is a demo to show how the CrossUI handle CRUD (create, read, update, delete) interactions with Google Firestore.
+
+Codeless and Serverless.
 
 <hr>
 
