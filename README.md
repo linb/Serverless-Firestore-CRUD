@@ -17,7 +17,7 @@ The entire program is done with codeless programming. The Firestore DB module is
 
 ![Tutorial](https://linb.github.io/Serverless-Firestore-CRUD/tutorial.png)
 
-[Click here to open the tutorial](https://www.slideshare.net/JackLee116/crossui-tutorial-crud)
+[Click here to open the tutorial](https://www.slideshare.net/JackLee116/crossui-tutorial-advanced-serverless-firestore-crud)
 
 
 <hr>
